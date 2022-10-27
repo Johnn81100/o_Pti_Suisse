@@ -1,19 +1,51 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bar restaurant O pti Suisse  situé dans le village de lombers, à proximité d'un chemin de promenade, idéal pour se désaltérer où manger des plats traditionnels">  
+        <title>{% block title %}Bar restaurant O pti suisse {% endblock %}</title>  
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+        <script src="{{ asset('asset/script/script.js') }}" defer></script>       
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&display=swap" rel="stylesheet">
         {% endblock %}
-
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header class="borderShadow">
+            <a href="{{path('user_dashboard')}}"> <img  src="{{ asset('/img/logo.jpg') }}" alt="logo O pti Suisse"/></a>
+            <nav id="navBar"  class="robotoSlab openNavBar">
+                <ul id="navList" >
+                    <li><a href="{{path('user_dashboard')}}" >Accueil</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Réservation & Contact</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                </ul>
+                <button class="burger">
+                    <div class="bar"></div>
+                </button>
+            </nav>
+        </header> 
+        <main class="container ">    
+        {% block body %}{% endblock %}   
+        </main>     
+        <footer  class="robotoSlab borderShadow">
+            <a href="https://www.facebook.com/optisuisse" target="_blank"> <img id="facebook" src="{{ asset('/img/facebook.png') }}" alt="photo facebook"></a>
+                <ul id="footerList" class="robotoSlab">
+                    <li><a href="#Politique">Politique de confidentialité</a></li>
+                    <li><a href="#Conditions">Conditions générales</a></li>
+                </ul>
+        </footer>
     </body>
 </html>
+
+    

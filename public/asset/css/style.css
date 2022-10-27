@@ -1,0 +1,273 @@
+/* <--------------------------------------------RESET---------------------------------------------> */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*<----------------------------------------------Body et  autres classes ------------------------------------->*/
+body
+{
+    background-color: #C71D26;
+    font-family: 'Open Sans', sans-serif; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container
+{
+    flex-grow:1;
+    border-left: solid 0.1875vw black ;
+    border-right: solid 0.1875vw black ;
+}
+.robotoSlab
+{
+    font-weight: 400;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.55vh;
+    color: whitesmoke;
+}
+.borderShadow
+{
+    box-shadow: 0px 0px 10px  5px white;
+    border: solid 0.1875vw black ;
+}
+
+/* <-----------------------------------------------NavBar----------Header--------MenuBurger--------------------------> */
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    min-height: 80px;
+    max-height: 130px;
+}   
+header img
+{
+    max-width: 6vw; 
+    min-width: 60px;   
+    margin: 2.0vw 2.7vw;
+}
+#navBar
+{
+    width:100%;
+    overflow: hidden;
+
+}
+
+#navList
+{
+    width: 100%;
+    display: flex;  
+    justify-content: center;   
+    list-style: none;
+}
+#navList a
+{
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 12px;
+}
+#navBar li
+{
+    text-align: center;
+     margin: 0px 2vw ; 
+     padding: 1vw; 
+}
+#navList li a:hover
+{
+    color: #C71D26;
+    background-color: white;
+    border-radius: 100%;
+    padding: 12px;
+    transition: all 0.3s ease-in ;
+}
+
+.burger
+{
+    display: none;
+}
+/*<----------------------------------------------Footer------------------------------------->*/
+footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 8.5vw;
+    flex-grow: 0;
+    max-height:100px ;
+    min-height: 55px;
+
+}
+footer img
+{
+    max-width: 4vw;
+    min-width: 35px;
+    margin: 2.0vw 2.7vw;
+}
+#footerList
+{
+    width: 100;
+    display: flex;
+    justify-content: space-between;      
+    display: flex;
+    justify-content: space-around;      
+    list-style: none;
+}
+#footerList li
+{
+    justify-self: flex-end;
+    margin: 0vh 2vw;
+   display: dlex;
+}
+
+#footerList a
+{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.4vh;
+    
+}
+/*<----------------------------------------------Responsive------------------------------------->*/
+@media screen and ( max-width:798px)
+{
+    #navBar
+    {
+        width:100%;
+        display: flex;
+        justify-content: end;
+        margin: 0vh 2.5vw;
+    }
+     
+    #navList
+    {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content:flex-start;
+        height:calc(100vh - 14.2vh);     
+        position: absolute;
+        right: 0;
+        top: 90px;
+        font-size: 2vh;  
+        width:0%; 
+        overflow: hidden;    
+    }
+    #navBar li
+    {
+        margin: 1vh 2vw ; 
+        padding: 1vw; 
+        width: 100%;
+        text-align: start;
+    }
+    .burger
+    {
+        display:block;
+        position: relative;
+        padding: 0px;
+        width: 35px;
+        height: 45px;
+        cursor: pointer;
+        background-color:transparent;
+        border:none;
+        align-self: center;         
+    }
+        #footerList a
+    {
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: 0.9vh;
+    }
+    .bar
+    {
+          display: block;  
+          width: 35px;
+          height: 4px;
+          background-color: white;
+          border-radius: 4px; 
+          transition: all 0.3s ease-in-out;
+    }
+    .openNavBar #navList
+    {
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .openNavBar .bar
+    {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .bar::before, .bar::after
+    {
+       content: "";
+       width: 35px;
+       height: 4px;
+       background-color: white;
+       border-radius: 4px;
+       position: absolute;
+       right: 0;
+       transition: all 0.3s ease-in-out;
+    }
+
+    .bar::before
+    {
+        transform:translateY(-12px);
+        
+    }
+
+    .openNavBar .bar::before
+    {
+        transform: rotate(45deg);
+    }
+
+    .bar::after
+    {
+        transform:translateY(12px);
+    }
+
+    .openNavBar .bar::after
+    {
+        transform: rotate(-45deg);
+    }
+
+}
