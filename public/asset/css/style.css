@@ -1,4 +1,4 @@
-/* <--------------------------------------------RESET---------------------------------------------> */
+    /* <--------------------------------------------RESET---------------------------------------------> */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 90%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -62,7 +62,7 @@ body
 {
     font-weight: 400;
     font-family: 'Roboto Slab', serif;
-    font-size: 2.55vh;
+    font-size: 2.48vmin;
     color: whitesmoke;
 }
 .borderShadow
@@ -77,14 +77,16 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    min-height: 80px;
-    max-height: 130px;
+    height:18vmin;
 }   
 header img
 {
-    max-width: 6vw; 
-    min-width: 60px;   
-    margin: 2.0vw 2.7vw;
+    max-width: 14vmin;    
+    margin: 2.0vh 2.7vw;
+}
+header a
+{
+    display: flex;
 }
 #navBar
 {
@@ -99,25 +101,27 @@ header img
     display: flex;  
     justify-content: center;   
     list-style: none;
+    
 }
 #navList a
 {
     color: whitesmoke;
     text-decoration: none;
-    padding: 12px;
+    padding: 15px;
+    
 }
 #navBar li
 {
     text-align: center;
      margin: 0px 2vw ; 
      padding: 1vw; 
+     display: flex;
 }
 #navList li a:hover
 {
     color: #C71D26;
     background-color: white;
     border-radius: 100%;
-    padding: 12px;
     transition: all 0.3s ease-in ;
 }
 
@@ -131,23 +135,17 @@ footer
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-height: 8.5vw;
     flex-grow: 0;
-    max-height:100px ;
-    min-height: 55px;
-
+    
+   
 }
 footer img
 {
-    max-width: 4vw;
-    min-width: 35px;
-    margin: 2.0vw 2.7vw;
+    max-width: 7vmin;
+    margin: 2.0vh 2.7vw;
 }
 #footerList
-{
-    width: 100;
-    display: flex;
-    justify-content: space-between;      
+{      
     display: flex;
     justify-content: space-around;      
     list-style: none;
@@ -156,7 +154,7 @@ footer img
 {
     justify-self: flex-end;
     margin: 0vh 2vw;
-   display: dlex;
+   display: flex;
 }
 
 #footerList a
@@ -166,8 +164,10 @@ footer img
     font-size: 1.4vh;
     
 }
+/*<----------------------------------------------/accueil------------------------------------->*/
+
 /*<----------------------------------------------Responsive------------------------------------->*/
-@media screen and ( max-width:798px)
+@media screen and ( max-width:900px)
 {
     #navBar
     {
@@ -183,11 +183,10 @@ footer img
         flex-direction: column;
         align-items: flex-start;
         justify-content:flex-start;
-        height:calc(100vh - 14.2vh);     
+        height:calc(99.7vh - 18.2vmin);              
         position: absolute;
-        right: 0;
-        top: 90px;
-        font-size: 2vh;  
+        right: 0px;
+         top: 18.2vmin;  
         width:0%; 
         overflow: hidden;    
     }
@@ -204,7 +203,7 @@ footer img
         position: relative;
         padding: 0px;
         width: 35px;
-        height: 45px;
+        height: 40px;
         cursor: pointer;
         background-color:transparent;
         border:none;
@@ -214,13 +213,13 @@ footer img
     {
         color: whitesmoke;
         text-decoration: none;
-        font-size: 0.9vh;
+        font-size: 0.9vmin;
     }
     .bar
     {
           display: block;  
           width: 35px;
-          height: 4px;
+          height: 3px;
           background-color: white;
           border-radius: 4px; 
           transition: all 0.3s ease-in-out;
@@ -229,6 +228,8 @@ footer img
     {
         width: 100%;
         transition: all 0.5s ease-in-out;
+        background-color: #C71D26;
+        border: 1px  solid black;   
     }
 
     .openNavBar .bar
@@ -241,7 +242,7 @@ footer img
     {
        content: "";
        width: 35px;
-       height: 4px;
+       height: 3px;
        background-color: white;
        border-radius: 4px;
        position: absolute;
@@ -270,4 +271,29 @@ footer img
         transform: rotate(-45deg);
     }
 
+    #navList li a:hover
+    {
+        color:white;
+        background-color:#C71D26;
+        transition:none;
+    }
+
+}
+@media screen and ( max-width:767.90px)
+{
+    .bar::before, .bar::after
+    {      
+       width: 28px;
+       height: 2.8px;
+    }
+    .bar
+    {        
+          width: 28px;
+          height: 2.8px; 
+                 
+    }
+    .burger
+    {       
+        width: 28px;              
+    }
 }
